@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'ALS Sector'; /* Имя шрифта */
+  src: url('./text/ALS_Sector-Bold.otf') format('opentype');
+  font-weight: bold; /* Укажите нужный вес */
+  font-style: normal; /* Укажите нужный стиль */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}

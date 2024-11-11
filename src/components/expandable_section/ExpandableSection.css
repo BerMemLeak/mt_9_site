@@ -1,0 +1,128 @@
+/* Основные стили для компонента */
+.expandable-section {
+  background-color: #1A1A19; /* Темная тема */
+  color: #ffffff; /* Цвет текста для темной темы */
+  border: 1px solid #1A1A19;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Стили для светлой темы */
+body:not(.dark-theme) .expandable-section {
+  background-color: white; /* Светлый фон */
+  color: #1A1A19; /* Цвет текста для светлой темы */
+  border: 1px solid #E7E7E7; /* Светлый цвет границы */
+}
+
+/* Стили для заголовка */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 16px;
+  background-color: #1A1A19; /* Темная тема */
+  transition: background-color 0.3s ease;
+}
+
+/* Стили для заголовка в светлой теме */
+body:not(.dark-theme) .header {
+  background-color: #ffffff; /* Светлый фон заголовка */
+}
+
+.header h2 {
+  margin: 0; /* Убираем отступы */
+  color: #ffffff; /* Цвет текста заголовка для темной темы */
+}
+
+/* Стили для заголовка в светлой теме */
+body:not(.dark-theme) .header h2 {
+  color: #1A1A19; /* Цвет текста заголовка в светлой теме */
+}
+
+.header:hover {
+  background-color: #1A1A19; /* Темная тема */
+}
+
+/* Стили для кнопки переключения */
+.toggle-button {
+  background-color: transparent;
+  color: #A2A2A2; /* Темная тема */
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Стили для кнопки в светлой теме */
+body:not(.dark-theme) .toggle-button {
+  color: #1A1A19; /* Цвет текста для светлой темы */
+  border-color: #1A1A19; /* Светлый цвет рамки */
+}
+
+/* Убираем проблему с max-height */
+.content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column; /* Flex для вертикального расположения */
+}
+
+.content.open {
+  height: auto; /* Полное раскрытие */
+  opacity: 1;
+  visibility: visible;
+}
+
+.text-content {
+  padding: 16px;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 16px;
+  margin-top: 16px; /* Добавляем отступ для отделения от текста */
+}
+
+/* Картинки адаптивно подстраиваются под сетку */
+.image-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Эффект подсветки при наведении */
+.image-gallery img:hover {
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки на планшетах */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: 1fr; /* 1 колонка на мобильных устройствах */
+  }
+
+  .header {
+    flex-direction: column; /* Вертикальное расположение заголовка на мобильных */
+  }
+
+  .toggle-button {
+    width: 100%; /* Кнопка на всю ширину на мобильных */
+    margin-top: 8px; /* Отступ сверху */
+  }
+}

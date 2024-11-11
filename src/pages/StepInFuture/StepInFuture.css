@@ -1,0 +1,109 @@
+/* Основной контейнер */
+.design-container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Темная тема */
+.design-container.dark {
+  background-color: #2b2b2a;
+  color: #E7E7E7;
+}
+
+.design-container.dark h1,
+.design-container.dark h2,
+.design-container.dark .design-container__text {
+  color: inherit;
+}
+
+.design-container.dark a {
+  color: #A9C5FF; /* Цвет ссылок в темной теме */
+}
+
+.design-container.dark .design-container__text {
+  color: #D1D1D1;
+}
+
+/* Заголовки */
+.design-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: inherit;
+}
+
+.design-container h2 {
+  font-size: 2.2rem;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Стили для текста */
+.design-container__text {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Стили для ссылок */
+.design-container a {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.design-container a:hover {
+  color: #005bb5;
+}
+
+
+
+
+/* Светлая тема */
+.design-container.light {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.design-container.light h1,
+.design-container.light h2 {
+  color: #2a2a2a;
+}
+
+.design-container.light .design-container__text {
+  color: #555;
+}
+
+
+
+.design-container.light blockquote {
+  background-color: #e9f0fe;
+}
+
+
+
+
+
+/* Респонсивность */
+@media (max-width: 768px) {
+  .design-container {
+    padding: 20px;
+  }
+
+  .design-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .design-container h2 {
+    font-size: 1.8rem;
+  }
+}

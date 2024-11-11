@@ -1,0 +1,115 @@
+/* src/components/NewsCard/NewsCard.css */
+
+/* Основные стили карточки */
+.card {
+  line-height: 1.35em;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Два столбца: текст и изображение */
+  border-radius: 12px;
+  background-color: #1A1A19; /* Темный фон для карточки */
+  box-shadow: 0 8px 16px rgba(146, 143, 143, 0.3); /* Белая тень с прозрачностью */
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-top: 30px; /* Добавляем отступ сверху за пределами блока */
+  min-height: 200px; /* Ограничение минимальной высоты для карточек */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Легкий эффект подъема */
+  box-shadow: 0 12px 24px rgba(34, 34, 34, 0.5); /* Усиление белой тени при наведении */
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Размещаем текст и кнопку без лишнего пространства */
+  color: #E7E7E7; /* Цвет текста */
+  flex-grow: 1; /* Позволяет блоку занимать оставшееся пространство, если нужно */
+}
+
+.card-action {
+  margin-top: 20px; /* Добавьте отступ сверху для кнопки */
+  display: flex;
+  justify-content: flex-start; /* Выравнивание кнопки по левому краю */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  text-align: left; /* Выравнивание по левому краю */
+  color: #A2A2A2; /* Цвет заголовков */
+  margin-bottom: 20px; /* Отступ снизу заголовка */
+}
+
+.card-subtitle {
+  font-size: 1.25rem;
+  text-align: left; /* Выравнивание по левому краю */
+  color: #A2A2A2; /* Цвет для подзаголовков по умолчанию */
+  margin-bottom: 20px; /* Отступ снизу подзаголовка */
+}
+
+.card-image {
+  display: flex;
+  align-items: flex-start; /* Изображение выравнивается по верхнему краю */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  max-width: 100%; /* Ограничиваем ширину до 100% контейнера */
+  height: auto; /* Автоматическая высота для сохранения пропорций */
+  border-radius: 20px; /* Скругление углов изображения */
+  object-fit: contain; /* Вписываем изображение в контейнер, сохраняя пропорции */
+}
+
+/* Стили для текста внутри карточки */
+.card p {
+  color: inherit; /* Наследует цвет от родительского элемента */
+  margin: 0; /* Убираем отступы по умолчанию */
+  line-height: 1.5; /* Устанавливаем межстрочный интервал */
+}
+
+/* Стили для светлой темы */
+body:not(.dark-theme) .card {
+  background-color: white; /* Фон карточки в светлой теме */
+  color: black; /* Цвет текста в светлой теме */
+}
+
+body:not(.dark-theme) .card-title,
+body:not(.dark-theme) .card-subtitle {
+  color: #000000; /* Цвет заголовков в светлой теме */
+}
+
+body:not(.dark-theme) .card p {
+  color: black; /* Цвет текста в светлой теме */
+}
+
+/* Стили для темной темы */
+body.dark-theme .card {
+  background-color: #1A1A19; /* Фон карточки в темной теме */
+  color: #ffffff; /* Цвет текста в темной теме */
+}
+
+body.dark-theme .card-title,
+body.dark-theme .card-subtitle {
+  color: #ffffff; /* Цвет заголовков в темной теме */
+}
+
+body.dark-theme .card p {
+  color: #ffffff; /* Цвет текста в темной теме */
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr; /* Один столбец для мобильных устройств */
+  }
+
+  .card-image {
+    margin-top: 20px; /* Отступ снизу для изображения */
+    margin-bottom: 20px; /* Отступ снизу для изображения */
+  }
+
+  .card-info {
+    margin-top: 0; /* Убираем отступ сверху для текста на мобильных устройствах */
+  }
+}

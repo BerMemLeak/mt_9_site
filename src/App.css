@@ -1,0 +1,15 @@
+body {
+  background-color: #1A1A19; /* Цвет фона для темной темы */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100vh;
+  
+  font-family: Arial, sans-serif; /* Задайте шрифт по желанию */
+}
+
+/* Стили для светлой темы */
+body:not(.dark-theme) {
+  background-color: white; /* Цвет фона для светлой темы */
+  color: black; /* Цвет текста по умолчанию для светлой темы */
+}

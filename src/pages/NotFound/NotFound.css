@@ -1,0 +1,66 @@
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #121212; /* Темная тема */
+  color: #ffffff; /* Цвет текста для темной темы */
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 8rem;
+  font-weight: 700;
+  margin: 0;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.not-found-text {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  opacity: 0.7;
+}
+
+/* Стили для ссылки */
+.not-found-link {
+  font-size: 1.2rem;
+  color: #03a9f4;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #03a9f4;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.not-found-link:hover {
+  background-color: #03a9f4;
+  color: #121212;
+}
+
+/* Светлая тема */
+.not-found-container.light {
+  background-color: #ffffff; /* Светлая тема */
+  color: #000000; /* Цвет текста для светлой темы */
+}
+
+.not-found-link.light {
+  color: #03a9f4; /* Цвет ссылки в светлой теме */
+  border-color: #03a9f4; /* Цвет рамки ссылки в светлой теме */
+}
+
+.not-found-link.light:hover {
+  background-color: #d6d6d6; /* Цвет фона ссылки при наведении в светлой теме */
+  color: #ffffff; /* Цвет текста ссылки при наведении в светлой теме */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

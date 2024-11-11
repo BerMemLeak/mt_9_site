@@ -1,0 +1,72 @@
+.design-container {
+  max-width: 90%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  border-radius: 8px;
+  
+}
+
+/* Темная тема */
+.design-container.dark {
+  background-color: #1A1A19; /* Цвет фона для темной темы */
+  color: #E7E7E7; /* Цвет текста для темной темы */
+  margin-top: 90px;
+}
+
+.design-container.dark h1,
+.design-container.dark h2,
+.design-container.dark .design-container__text {
+  color: inherit; /* Использует цвет текста из контейнера */
+}
+
+.design-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.design-container h2 {
+  font-size: 2em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.design-container__text {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Светлая тема */
+.design-container.light {
+  background-color: #E7E7E7; /* Цвет фона для светлой темы */
+  color: #1A1A19; /* Цвет текста для светлой темы */
+}
+
+.design-container.light h1,
+.design-container.light h2 {
+  color: #333; /* Цвет заголовков в светлой теме */
+}
+
+.design-container.light .design-container__text {
+  color: #A2A2A2; /* Цвет текста в светлой теме */
+}
+
+blockquote {
+  border-left: 4px solid #A2A2A2; /* Цвет левой границы для blockquote */
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  background-color: #2e2e2e; /* Можно изменить, если требуется */
+  border-radius: 4px;
+}
+
+/* Светлая тема для blockquote */
+.design-container.light blockquote {
+  background-color: #ffffff; /* Цвет фона для light темы blockquote */
+  color: #1A1A19; /* Цвет текста для light темы blockquote */
+  border-left-color: #A2A2A2; /* Цвет левой границы для light темы blockquote */
+}
+
+blockquote::before,
+blockquote::after {
+  color: #A2A2A2; /* Цвет для псевдоэлементов */
+}

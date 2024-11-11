@@ -1,0 +1,12 @@
+.custom-cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference; /* Инверсия цвета */
+    z-index: 1000;
+  }
+  

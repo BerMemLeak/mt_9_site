@@ -1,0 +1,62 @@
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого */
+    justify-content: center; /* Центрирование содержимого по вертикали */
+    padding: 70px 20px 20px; /* Отступ сверху 70px и по 20px сбоку и снизу */
+    margin: 0 auto; /* Центрирование блока */
+    max-width: 800px; /* Максимальная ширина для больших экранов */
+    margin-top: 70px;
+  }
+  
+  .contact {
+    margin: 10px 0; /* Отступы сверху и снизу для каждого контактного элемента */
+  }
+  
+  .contact-header {
+    color: #1A1A19;
+    font-size: larger;
+    text-align: center;
+  }
+  
+  .contact-image {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .contact-image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px; /* Скругление углов изображения */
+
+    width: 80%; /* Увеличенная ширина для лучшего отображения на телефонах */
+    max-width: 900px; /* Максимальная ширина для больших экранов */
+  }
+  
+  /* Темная тема */
+  .contact-info.dark {
+    background-color: #1A1A19;
+    color: #ffffff;
+  }
+  
+  .contact-info.dark .contact-header {
+    color: #ffffff; /* Изменяем цвет на светлый для темной темы */
+  }
+  
+  /* Светлая тема */
+  .contact-info.light {
+    background-color: #ffffff;
+    color: #1A1A19;
+  }
+  
+  .contact-info.light .contact-header {
+    color: #1A1A19; /* Устанавливаем цвет для светлой темы */
+  }
+  
+  /* Стили для ссылок */
+  .contact-info a {
+    color: inherit; /* Наследовать цвет от родителя */
+    text-decoration: none; /* Убрать подчеркивание */
+  }
+  

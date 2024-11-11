@@ -1,0 +1,14 @@
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Расстояние между карточками */
+    padding: 16px;
+    margin-top: 70px;
+
+  }
+  
+  /* Дополнительные стили, если нужно */
+  .team-container > * {
+    /* Можно задать максимальную ширину для карточек, чтобы они не растягивались слишком сильно */
+    max-width: 100%;
+  }

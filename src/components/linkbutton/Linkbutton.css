@@ -1,0 +1,25 @@
+.btn-blue {
+  background-color: #2499EC; /* Яркая синяя кнопка */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  text-align: center;
+  transition: background-color 0.5s, transform 0.5s;
+  text-decoration: none; /* Убираем подчеркивание для кнопки */
+  margin-bottom: 40px; /* Отступ снизу */
+}
+
+.btn-blue:hover {
+  background-color: #004E9F;
+  transform: translateY(-10px); /* Подъем кнопки при наведении */
+}
+
+  .link {
+    color: #002C5B; /* Светло-синий для ссылок */
+    text-decoration: underline;
+  }
+  
+  .link:hover {
+    color: #a9b194;
+  }
+  

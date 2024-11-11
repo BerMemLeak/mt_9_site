@@ -1,0 +1,31 @@
+.course-container {
+  margin-top: 90px;
+}
+
+.course-title {
+  display: block; /* Делаем элемент блочным, чтобы можно было центрировать */
+  text-align: center; /* Центрируем текст */
+  margin: 30px auto; /* Центрируем элемент горизонтально с отступами сверху и снизу */
+  padding: 10px 20px; /* Добавляем внутренние отступы для улучшения видимости */
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #f1f1f1; /* Цвет текста в темной теме */
+  background-color: #1A1A19; /* Фон в темной теме */
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  border-radius: 8px; /* Скругление углов */
+}
+
+/* Стили для светлой темы */
+body:not(.dark-theme) .course-title {
+  color: black; /* Цвет текста в светлой теме */
+  background-color: white; /* Фон в светлой теме */
+}
+
+/* Стили для эффекта наведения */
+.course-title:hover {
+  transform: scale(1.1); /* Увеличиваем элемент при наведении */
+  color: #f0ebeb; /* Цвет текста при наведении */
+  text-decoration: none;
+}
