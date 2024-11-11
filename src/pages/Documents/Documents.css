@@ -2,8 +2,21 @@
 .documents-container {
   padding: 20px;
   transition: background-color 0.3s, color 0.3s;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивание по центру по горизонтали */
+  justify-content: center; /* Выравнивание по центру по вертикали (если высота контейнера позволяет) */
+  text-align: center; /* Центрирование текста */
 }
 
+.category {
+  margin-bottom: 30px;
+  max-width: 800px; /* Ограничение ширины для красивого отображения */
+  width: 100%;
+}
+
+/* Стили для заголовков и описаний */
 .category-title {
   font-size: 1.6rem;
   font-weight: bold;
@@ -31,10 +44,14 @@
   color: #0077ff;
 }
 
+/* Стили таблиц */
 .documents-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  text-align: left;
+  margin-left: auto; /* Центрирование таблицы */
+  margin-right: auto; /* Центрирование таблицы */
 }
 
 .documents-table th,
@@ -50,12 +67,16 @@
 
 /* Светлая тема */
 .light-theme {
-  background-color: #f4f4f9;
+  background-color: #ffffff;
   color: #333;
 }
 
 .light-theme .document-link {
   color: #0077ff;
+}
+
+.dark-theme  .category-description {
+  color: #fafcfe;
 }
 
 .light-theme .document-link:hover {

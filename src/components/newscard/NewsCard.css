@@ -29,6 +29,7 @@
 
 .card-action {
   margin-top: 20px; /* Добавьте отступ сверху для кнопки */
+  margin-left: 10px;
   display: flex;
   justify-content: flex-start; /* Выравнивание кнопки по левому краю */
 }
@@ -52,6 +53,7 @@
   align-items: flex-start; /* Изображение выравнивается по верхнему краю */
   justify-content: center;
   overflow: hidden;
+  margin-left: 45px;
 }
 
 .card-image img {
