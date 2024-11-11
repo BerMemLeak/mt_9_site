@@ -1,0 +1,115 @@
+/* Общие стили */
+.disciplines-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 80px;
+    backdrop-filter: blur(8px); /* Размытие заднего фона */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Добавим легкую тень для выделения */
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.disciplines-list {
+    list-style: none;
+    padding: 0;
+}
+
+.discipline-item {
+    margin-bottom: 15px;
+}
+
+.discipline-button {
+    width: 100%;
+    background: transparent;
+    color: inherit;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 10px;
+    border: 2px solid currentColor;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.discipline-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+/* Подсветка выбранной дисциплины */
+.discipline-button.active {
+    background-color: #0077ff;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.materials-container {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border-left: 3px solid currentColor;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.materials-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.materials-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.material-item {
+    margin-bottom: 5px;
+}
+
+.material-link {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.material-link:hover {
+    color: #0077ff;
+}
+
+/* Светлая тема */
+.light {
+    background-color: rgba(244, 244, 249, 0.8); /* Полупрозрачный фон */
+    color: #333;
+}
+
+.light .discipline-button {
+    border-color: #333;
+}
+
+.light .material-link:hover {
+    color: #0056b3;
+}
+
+/* Темная тема */
+.dark {
+    background-color: rgba(28, 28, 30, 0.8); /* Полупрозрачный фон */
+    color: #e0e0e0;
+}
+
+.dark .discipline-button {
+    border-color: #e0e0e0;
+}
+
+.dark .material-link:hover {
+    color: #80b3ff;
+}

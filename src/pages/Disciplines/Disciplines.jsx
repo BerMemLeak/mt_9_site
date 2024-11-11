@@ -1,57 +1,81 @@
 import React, { useState } from 'react';
 import disciplinesData from '../../database/disciplinesData';
-import styles from './Disciplines.css'; // Импортируем CSS-модуль
-
-const Discipline = ({ title, methods, theme }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className={`${styles.discipline} ${styles[theme]}`}>
-      <h2 className={styles.toggle} onClick={() => setIsOpen(!isOpen)}>
-        {title}
-      </h2>
-      {isOpen && (
-        <div>
-          {methods.map((method, index) => (
-            <p key={index}>
-              <a className={styles.methodContainer} href={method.link}>
-                <img className={styles.transform} src="/assets/images/method-book.png" alt="" />
-                <span>{method.name}</span>
-              </a>
-            </p>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
+import './Disciplines.css';
 
 const Disciplines = ({ theme }) => {
-  return (
-    <div className={`${styles.disciplinesContainer} ${styles[theme]}`}>
-      <h1>Магистрам</h1>
-      <div id="magisters">
-        {disciplinesData.map((discipline, index) => (
-          <Discipline
-            key={index}
-            title={discipline.title}
-            methods={discipline.methods}
-            theme={theme}
-          />
-        ))}
-      </div>
+  const [selectedDiscipline, setSelectedDiscipline] = useState(null);
 
-      <h1>Бакалаврам</h1>
-      <div id="common">
-        {disciplinesData.map((discipline, index) => (
-          <Discipline
-            key={index}
-            title={discipline.title}
-            methods={discipline.methods}
-            theme={theme}
-          />
+  const handleDisciplineClick = (discipline) => {
+    if (selectedDiscipline === discipline) {
+      setSelectedDiscipline(null);
+    } else {
+      setSelectedDiscipline(discipline);
+    }
+  };
+
+  // Фильтрация дисциплин по уровням
+  const bachelorDisciplines = disciplinesData.filter(discipline => discipline.level === 'Бакалавриат');
+  const masterDisciplines = disciplinesData.filter(discipline => discipline.level === 'Магистратура');
+
+  return (
+    <div className={`disciplines-container ${theme === 'dark' ? 'dark' : 'light'}`}>
+      <h1 className="title">Дисциплины</h1>
+      
+      <h2 className="level-title">Бакалавриат</h2>
+      <ul className="disciplines-list">
+        {bachelorDisciplines.map((discipline, index) => (
+          <li key={index} className="discipline-item">
+            <button
+              onClick={() => handleDisciplineClick(discipline)}
+              className={`discipline-button ${selectedDiscipline === discipline ? 'active' : ''}`}
+            >
+              {discipline.title}
+            </button>
+            {selectedDiscipline === discipline && (
+              <div className="materials-container">
+                <h3 className="materials-title">Доступные материалы:</h3>
+                <ul className="materials-list">
+                  {discipline.methods.map((method, idx) => (
+                    <li key={idx} className="material-item">
+                      <a href={method.link} target="_blank" rel="noopener noreferrer" className="material-link">
+                        {method.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
         ))}
-      </div>
+      </ul>
+      
+      <h2 className="level-title">Магистратура</h2>
+      <ul className="disciplines-list">
+        {masterDisciplines.map((discipline, index) => (
+          <li key={index} className="discipline-item">
+            <button
+              onClick={() => handleDisciplineClick(discipline)}
+              className={`discipline-button ${selectedDiscipline === discipline ? 'active' : ''}`}
+            >
+              {discipline.title}
+            </button>
+            {selectedDiscipline === discipline && (
+              <div className="materials-container">
+                <h3 className="materials-title">Доступные материалы:</h3>
+                <ul className="materials-list">
+                  {discipline.methods.map((method, idx) => (
+                    <li key={idx} className="material-item">
+                      <a href={method.link} target="_blank" rel="noopener noreferrer" className="material-link">
+                        {method.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

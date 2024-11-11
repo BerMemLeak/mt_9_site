@@ -1,3 +1,5 @@
+// преподаватели
+
 export const teachers = [
     {
       photo: 'http://design.bmstu.ru/assets/images/team/brekalov.jpg',

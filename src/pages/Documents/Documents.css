@@ -1,66 +1,85 @@
-/* Основной контейнер для всех документов */
+/* Общие стили */
 .documents-container {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
-  
-  /* Стиль для заголовков категорий */
-  .category-title {
-    font-size: 1.8em;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  /* Описание для категорий */
-  .category-description {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 15px;
-  }
-  
-  /* Ссылки на документы */
-  .document-item {
-    margin: 10px 0;
-  }
-  
-  .document-link {
-    font-size: 1.1em;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  .document-link:hover {
-    text-decoration: underline;
-  }
-  
-  /* Стили для таблицы */
-  .documents-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .documents-table th, .documents-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .documents-table th {
-    background-color: #f4f4f4;
-  }
-  
-  /* Увеличиваем размеры текста и отступы для лучшего восприятия */
-  .documents-table p {
-    font-size: 0.9em;
-    margin: 5px 0;
-  }
-  
-  .documents-table a {
-    color: #007bff;
-  }
-  
-  .documents-table a:hover {
-    text-decoration: underline;
-  }
-  
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.category-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.category-description {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.document-item {
+  margin-bottom: 10px;
+}
+
+.document-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.document-link:hover {
+  color: #0077ff;
+}
+
+.documents-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.documents-table th,
+.documents-table td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.documents-table th {
+  background-color: #f4f4f4;
+}
+
+/* Светлая тема */
+.light-theme {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.light-theme .document-link {
+  color: #0077ff;
+}
+
+.light-theme .document-link:hover {
+  color: #0056b3;
+}
+
+.light-theme .documents-table th {
+  background-color: #e9e9e9;
+}
+
+/* Темная тема */
+.dark-theme {
+  background-color: #1c1c1e;
+  color: #e0e0e0;
+}
+
+.dark-theme .document-link {
+  color: #80b3ff;
+}
+
+.dark-theme .document-link:hover {
+  color: #4d80ff;
+}
+
+.dark-theme .documents-table th {
+  background-color: #333;
+}

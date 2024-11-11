@@ -1,63 +1,35 @@
 import React from 'react';
-
+import './ScheduleTable.css'; // Подключаем обновленные стили
+import { schedules } from '../../database/schedules';
 const ScheduleTable = ({ theme }) => {
-  const schedules = [
-    {
-      group: 'МТ9-11Б',
-      file: '/assets/shcedule/mt9_11b.xlsx',
-      updated: '29.08.2024'
-    },
-    {
-      group: 'МТ9-31Б',
-      file: '/assets/shcedule/mt9_31b.xlsx',
-      updated: '29.08.2024'
-    },
-    {
-      group: 'МТ9-51Б',
-      file: '/assets/shcedule/mt9_51b.xlsx',
-      updated: '29.08.2024'
-    },
-    {
-      group: 'МТ9-71Б',
-      file: '/assets/shcedule/mt9_71b.xlsx',
-      updated: '29.08.2024'
-    },
-    {
-      group: 'МТ9-11М',
-      file: '/assets/shcedule/mt9_11m.xlsx',
-      updated: '29.08.2024'
-    },
-    {
-      group: 'МТ9-31М',
-      file: '/assets/shcedule/mt9_31m.xlsx',
-      updated: '29.08.2024'
-    }
-  ];
+
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1 style={{ fontSize: 'medium', fontWeight: 'bold' }}>Расписание</h1>
-      
-      <table style={{ width: '100%', marginBottom: '4rem' }}>
-        <thead>
-          <tr>
-            <th style={{ padding: '1rem 0', textAlign: 'center' }}>Группы</th>
-            <th style={{ padding: '1rem 0', textAlign: 'center' }}>Файлы</th>
-            <th style={{ padding: '1rem 0', textAlign: 'center' }}>Дата обновления</th>
-          </tr>
-        </thead>
-        <tbody>
-          {schedules.map((schedule, index) => (
-            <tr key={index}>
-              <td style={{ padding: '1rem 0', textAlign: 'center' }}>{schedule.group}</td>
-              <td style={{ padding: '1rem 0', textAlign: 'center' }}>
-                <a href={schedule.file} target="_blank" rel="noopener noreferrer">Скачать</a>
-              </td>
-              <td style={{ padding: '1rem 0', textAlign: 'center' }}>{schedule.updated}</td>
+    <div className="schedule-table-wrapper">
+      <div className={`schedule-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+        <h1 className="schedule-title">Расписание</h1>
+        
+        <table className="schedule-table">
+          <thead>
+            <tr>
+              <th>Группы</th>
+              <th>Файлы</th>
+              <th>Дата обновления</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {schedules.map((schedule, index) => (
+              <tr key={index}>
+                <td>{schedule.group}</td>
+                <td>
+                  <a href={schedule.file} target="_blank" rel="noopener noreferrer">Скачать</a>
+                </td>
+                <td>{schedule.updated}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

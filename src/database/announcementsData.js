@@ -1,4 +1,5 @@
-// anoncedata.js
+// анонсы
+
 const anonceData = [
   {
     id: 2,

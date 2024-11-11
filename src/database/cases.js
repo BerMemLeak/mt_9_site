@@ -1,4 +1,5 @@
-// anoncedata.js
+// кейсы
+
 const casesData = [
     {
       id: 2,

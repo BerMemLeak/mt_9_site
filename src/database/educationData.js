@@ -1,4 +1,5 @@
-// educationData.js
+// образование
+
 export const educationData = {
     mainHigher: {
       bachelor: {

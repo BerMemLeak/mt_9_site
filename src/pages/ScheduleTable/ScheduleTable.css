@@ -1,0 +1,76 @@
+/* Обертка для изоляции стилей компонента */
+.schedule-table-wrapper .schedule-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 80px;
+    backdrop-filter: blur(8px); /* Эффект размытия */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    text-align: center;
+}
+
+.schedule-table-wrapper .schedule-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.schedule-table-wrapper .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4rem;
+}
+
+.schedule-table-wrapper .schedule-table th,
+.schedule-table-wrapper .schedule-table td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.schedule-table-wrapper .schedule-table th {
+    font-weight: bold;
+}
+
+.schedule-table-wrapper .schedule-table a {
+    color: inherit;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.schedule-table-wrapper .schedule-table a:hover {
+    color: #0077ff; /* Цвет при наведении */
+}
+
+/* Светлая тема */
+.schedule-table-wrapper .light-theme {
+    background-color: rgba(244, 244, 249, 0.8);
+    color: #333;
+}
+
+.schedule-table-wrapper .light-theme .schedule-table th,
+.schedule-table-wrapper .light-theme .schedule-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.schedule-table-wrapper .light-theme .schedule-table a:hover {
+    color: #0056b3;
+}
+
+/* Темная тема */
+.schedule-table-wrapper .dark-theme {
+    background-color: rgba(28, 28, 30, 0.8);
+    color: #e0e0e0;
+}
+
+.schedule-table-wrapper .dark-theme .schedule-table th,
+.schedule-table-wrapper .dark-theme .schedule-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.schedule-table-wrapper .dark-theme .schedule-table a:hover {
+    color: #80b3ff;
+}
