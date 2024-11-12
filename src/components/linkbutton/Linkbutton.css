@@ -1,5 +1,5 @@
 .btn-blue {
-  background-color: #2499EC; /* Яркая синяя кнопка */
+  background-color: #0874e8; /* Яркая синяя кнопка */
   color: white;
   padding: 10px 20px;
   border-radius: 9999px;
@@ -10,16 +10,16 @@
 }
 
 .btn-blue:hover {
-  background-color: #004E9F;
+  background-color: #1567be;
   transform: translateY(-10px); /* Подъем кнопки при наведении */
 }
 
   .link {
-    color: #002C5B; /* Светло-синий для ссылок */
+    color: #0874e8; /* Светло-синий для ссылок */
     text-decoration: underline;
   }
   
   .link:hover {
-    color: #a9b194;
+    color: #901cef;
   }
   

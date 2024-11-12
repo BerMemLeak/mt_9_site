@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Размещаем текст и кнопку без лишнего пространства */
-  color: #E7E7E7; /* Цвет текста */
+  color: #030303; /* Цвет текста */
   flex-grow: 1; /* Позволяет блоку занимать оставшееся пространство, если нужно */
 }
 
@@ -89,6 +89,14 @@ body:not(.dark-theme) .card p {
 body.dark-theme .card {
   background-color: #1A1A19; /* Фон карточки в темной теме */
   color: #ffffff; /* Цвет текста в темной теме */
+}
+
+body.dark-theme .card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Размещаем текст и кнопку без лишнего пространства */
+  color: #ffffff; /* Цвет текста */
+  flex-grow: 1; /* Позволяет блоку занимать оставшееся пространство, если нужно */
 }
 
 body.dark-theme .card-title,
