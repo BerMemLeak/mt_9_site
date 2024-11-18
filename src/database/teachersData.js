@@ -1,4 +1,5 @@
 // преподаватели
+import React from 'react';
 
 export const teachers = [
     {

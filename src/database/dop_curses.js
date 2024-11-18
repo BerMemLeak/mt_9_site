@@ -1,4 +1,5 @@
 // дополнительные курсы на главной странице
+import React from 'react';
 
 export const subjects = [
     "Моушн-дизайн",

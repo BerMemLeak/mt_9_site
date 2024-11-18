@@ -1,4 +1,5 @@
 // кейсы
+import React from 'react';
 
 const casesData = [
     {

@@ -1,4 +1,5 @@
 //расписания
+import React from 'react';
 
 export const  schedules = [
     { group: 'МТ9-11Б', file: '/assets/shcedule/mt9_11b.xlsx', updated: '29.08.2024' },

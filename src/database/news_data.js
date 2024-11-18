@@ -1,4 +1,6 @@
 // новостиы
+import React from 'react';
+
 export const newsData = [
     {
       title: "16.09.2024	Встреча с известным транспортным дизайнером Михаилом Климовым",

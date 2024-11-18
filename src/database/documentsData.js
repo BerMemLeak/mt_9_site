@@ -1,4 +1,6 @@
 //документы 
+import React from 'react';
+
 export const documentsData = [
     {
       title: "Документы 2024-2025 учебный год",

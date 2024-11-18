@@ -1,4 +1,5 @@
 // образование
+import React from 'react';
 
 export const educationData = {
     mainHigher: {
