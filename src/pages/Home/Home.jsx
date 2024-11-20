@@ -21,6 +21,9 @@ const Home = () => {
 
   return (
     <div className="course-container">
+
+      <Marquee items={teacherCards} />
+
       <NewsCard
         title="Подготовительные курсы"
         subtitle="Концептуальное эскизирование в дизайне"
@@ -41,7 +44,6 @@ const Home = () => {
         }
         link={{ href: "https://isot.bmstu.ru/dop/k-design/" }}
       />
-      <Marquee items={teacherCards} />
       <NewsCard
         title="Как не заблудиться в университете?"
         image="http://design.bmstu.ru/assets/images/kak_ne_zabluditsya.jpeg"

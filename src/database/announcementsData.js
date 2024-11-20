@@ -1,5 +1,4 @@
 // анонсы
-import React from 'react';
 
 const anonceData = [
   // Добавляй другие новости здесь

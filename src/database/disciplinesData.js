@@ -1,5 +1,4 @@
 // дисциплины
-import React from 'react';
 
 const disciplinesData = [
   {

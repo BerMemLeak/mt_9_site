@@ -1,5 +1,5 @@
 .btn-blue {
-  background-color: #0874e8; /* Яркая синяя кнопка */
+  background-color: #009fe3; /* Яркая синяя кнопка */
   color: white;
   padding: 10px 20px;
   border-radius: 9999px;
@@ -15,7 +15,7 @@
 }
 
   .link {
-    color: #0874e8; /* Светло-синий для ссылок */
+    color: #009fe3; /* Светло-синий для ссылок */
     text-decoration: underline;
   }
   

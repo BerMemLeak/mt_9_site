@@ -111,7 +111,6 @@ body.dark-theme .card p {
 /* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
   .card {
-    grid-template-columns: 1fr; /* Один столбец для мобильных устройств */
   }
 
   .card-image {
@@ -123,3 +122,6 @@ body.dark-theme .card p {
     margin-top: 0; /* Убираем отступ сверху для текста на мобильных устройствах */
   }
 }
+
+
+

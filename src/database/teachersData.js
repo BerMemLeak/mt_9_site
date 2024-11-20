@@ -1,5 +1,4 @@
 // преподаватели
-import React from 'react';
 
 export const teachers = [
     {
@@ -11,65 +10,65 @@ export const teachers = [
     {
       photo: 'http://design.bmstu.ru/assets/images/team/terehova.jpg',
       name: 'Терехова Наталия Юрьевна',
-      position: 'заместитель заведующего кафедрой, к.ф.н,доцент, член Союза дизайнеров России',
+      position: 'заместитель заведующего кафедрой, к.ф.н., доцент, член Союза дизайнеров России',
       description: ' terehova@bmstu.ru'
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/filatov.jpg',
       name: 'Филатов Иван Алексеевич',
-      position: 'старший преподаватель',
-      description: 'практикующий дизайнер'
+      position: 'старший преподаватель, практикующий дизайнер',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/safin.jpg',
       name: 'Сафин Дмитрий Юсупович',
-      position: 'старший преподаватель',
-      description: 'член Союза дизайнеров России, практикующий дизайнер',
+      position: 'старший преподаватель, член Союза дизайнеров России, практикующий дизайнер',
+      description: '',
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/rtishev.jpg',
       name: 'Ртищев Денис Игоревич',
-      position: 'старший преподаватель',
-      description: 'член Союза дизайнеров России, практикующий дизайнер'
+      position: 'старший преподаватель, член Союза дизайнеров России, практикующий дизайнер',
+      description: ''
     },
 
     {
       photo: 'http://design.bmstu.ru/assets/images/team/alimova2.jpg',
       name: 'Алымова Александра Евгеньевна',
-      position: 'старший преподаватель',
-      description: 'практикующий дизайнер'
+      position: 'старший преподаватель, практикующий дизайнер',
+      description: ''
     },
 
     {
       photo: 'http://design.bmstu.ru/assets/images/team/shaimanova.jpg',
       name: 'Шайманова Елена Николаевна',
-      position: 'старший преподаватель',
-      description: 'практикующий дизайнер'
+      position: 'старший преподаватель, практикующий дизайнер',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/hrapovickij.jpg',
       name: 'Храповицкий Виктор Алексеевич',
-      position: 'старший преподаватель',
-      description: 'член Союза дизайнеров России, практикующий дизайнер'
+      position: 'старший преподаватель, член Союза дизайнеров России, практикующий дизайнер',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/vinogradov.jpg',
       name: 'Виноградов Василий Иванович',
-      position: 'старший преподаватель',
-      description: 'практикующий дизайнер'
+      position: 'старший преподаватель, практикующий дизайнер',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/kup2.jpg',
       name: 'Куприянова Елена Юрьевна',
-      position: 'старший преподаватель',
-      description: 'Член Творческого Союза Художников России'
+      position: 'старший преподаватель, член Творческого Союза Художников России',
+      description: ''
     },
 
     {
       photo: 'http://design.bmstu.ru/assets/images/team/spasskaja2.jpg',
       name: 'Спасская Дарья Дмитриевна',
-      position: 'старший преподаватель',
-      description: 'Член Творческого Союза дизайнеров России'
+      position: 'старший преподаватель, член  Союза дизайнеров России',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/parfjonova.jpg',
@@ -80,14 +79,14 @@ export const teachers = [
     {
       photo: 'http://design.bmstu.ru/assets/images/team/procenko.jpg',
       name: 'Проценко Пётр Данилович',
-      position: 'старший преподаватель',
-      description: 'член Союза дизайнеров России'
+      position: 'старший преподаватель, член Союза дизайнеров России',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/izotov.jpg',
       name: 'Изотов Антон Сергеевич',
-      position: 'старший преподаватель',
-      description: 'член Союза дизайнеров России, практикующий дизайнер'
+      position: 'старший преподаватель, член Союза дизайнеров России, практикующий дизайнер',
+      description: ''
     },
     {
       photo: 'http://design.bmstu.ru/assets/images/team/konovalov.jpg',

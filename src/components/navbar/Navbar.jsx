@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navbar.css"; // Добавьте файл для стилей
 import logo_light from "../../assets/logo_light.png";
 import logo_dark from "../../assets/logo_dark.png";
 
 const Navbar = ({ isDarkTheme, toggleTheme }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const [isMobile, setIsMobile] = useState(false);
+
+  const location = useLocation(); // Получаем текущий путь
 
   useEffect(() => {
     // Функция для проверки ширины окна
@@ -31,19 +31,52 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <div className={`navbar-links ${isMobile ? "mobile" : ""}`}>
-      
       <nav>
-        
         <ul className="navbar">
-        <div className="logo-container">
-            <img src={isDarkTheme? logo_dark : logo_light} alt="Логотип" className="logo" />
+          <div className="logo-container">
+            <img src={isDarkTheme ? logo_dark : logo_light} alt="Логотип" className="logo" />
           </div>
+          
+          <li className={location.pathname === "/" ? "active" : ""}>
+            <Link to="/">Главная</Link>
+          </li>
+          <li className={location.pathname === "/announcements" ? "active" : ""}>
+            <Link to="/announcements">Анонсы</Link>
+          </li>
+          <li className={location.pathname === "/news" ? "active" : ""}>
+            <Link to="/news">Новости</Link>
+          </li>
+          <li className={location.pathname === "/team" ? "active" : ""}>
+            <Link to="/team">Команда</Link>
+          </li>
+          <li className={location.pathname === "/about" ? "active" : ""}>
+            <Link to="/about">История</Link>
+          </li>
+          <li className={location.pathname === "/cases" ? "active" : ""}>
+            <Link to="/cases">Кейсы</Link>
+          </li>
+          <li className={location.pathname === "/contacts" ? "active" : ""}>
+            <Link to="/contacts">Контакты</Link>
+          </li>
+          <li className={location.pathname === "/educations" ? "active" : ""}>
+            <Link to="/educations">Образование</Link>
+          </li>
+          <li className={location.pathname === "/stepInFuture" ? "active" : ""}>
+            <Link to="/stepInFuture">Шаг в будущее</Link>
+          </li>
+          <li className={location.pathname === "/disciplines" ? "active" : ""}>
+            <Link to="/disciplines">Дисциплины</Link>
+          </li>
+          <li className={location.pathname === "/schedule" ? "active" : ""}>
+            <Link to="/schedule">Расписания</Link>
+          </li>
+          <li className={location.pathname === "/documents" ? "active" : ""}>
+            <Link to="/documents">Документы</Link>
+          </li>
+
+          
           <label className="switch">
             <input
               type="checkbox"
@@ -64,55 +97,8 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
               </span>
             </span>
           </label>
-
-          <li>
-            <Link to="/">Главная</Link>
-          </li>
-          <li>
-            <Link to="/announcements">Анонсы</Link>
-          </li>
-          <li>
-            <Link to="/news">Новости</Link>
-          </li>
-          <li>
-            <Link to="/team">Команда</Link>
-          </li>
-          <li>
-            <Link to="/about">История</Link>
-          </li>
-          <li>
-            <Link to="/cases">Кейсы</Link>
-          </li>
-          <li>
-            <Link to="/contacts">Контакты</Link>
-          </li>
-          <li
-            className="burger"
-            onMouseEnter={toggleMenu}
-            onMouseLeave={toggleMenu}
-          >
-            Обучение
-            <ul className={`dropdown ${isOpen ? "open" : ""}`}>
-              <li>
-                <Link to="/educations">Образование</Link>
-              </li>
-              <li>
-                <Link to="/stepInFuture">Шаг в будущее</Link>
-              </li>
-              <li>
-                <Link to="/disciplines">Дисциплины</Link>
-              </li>
-              <li>
-                <Link to="/schedule">Расписания</Link>
-              </li>
-              <li>
-                <Link to="/documents">Документы</Link>
-              </li>
-            </ul>
-          </li>
-
+          
         </ul>
-
       </nav>
     </div>
   );
