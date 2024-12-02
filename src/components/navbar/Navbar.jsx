@@ -36,7 +36,10 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
       <nav>
         <ul className="navbar">
           <div className="logo-container">
-            <img src={isDarkTheme ? logo_dark : logo_light} alt="Логотип" className="logo" />
+            {/* Оборачиваем логотип в Link для перехода на главную страницу */}
+            <Link to="/">
+              <img src={isDarkTheme ? logo_dark : logo_light} alt="Логотип" className="logo" />
+            </Link>
           </div>
           
           <li className={location.pathname === "/" ? "active" : ""}>

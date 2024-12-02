@@ -127,7 +127,7 @@ const Home = () => {
 
       />
 
-      <a href="https://t.me/studsovet_bmstu" className="course-title">
+      <a href="https://isot.bmstu.ru/dop/k-design/" className="course-title">
         Дополнительные курсы
       </a>
 

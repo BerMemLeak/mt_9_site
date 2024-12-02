@@ -2,7 +2,7 @@
 .expandable-section {
   background-color: #1A1A19; /* Темная тема */
   color: #ffffff; /* Цвет текста для темной темы */
-  border: 1px solid #1A1A19;
+  border: 1px solid #31312f;
   border-radius: 8px;
   margin-bottom: 16px;
   overflow: hidden;
@@ -52,7 +52,6 @@ body:not(.dark-theme) .header h2 {
   color: #A2A2A2; /* Темная тема */
   border: 1px solid #888;
   border-radius: 4px;
-  padding: 8px 12px;
   font-size: 14px;
   transition: all 0.3s ease;
   cursor: pointer;
