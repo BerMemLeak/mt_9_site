@@ -1,25 +1,29 @@
 .btn-blue {
-  background-color: #009fe3; /* Яркая синяя кнопка */
+  background-color: #009fe3;
+  /* Яркая синяя кнопка */
   color: white;
   padding: 10px 20px;
   border-radius: 9999px;
   text-align: center;
   transition: background-color 0.5s, transform 0.5s;
-  text-decoration: none; /* Убираем подчеркивание для кнопки */
-  margin-bottom: 40px; /* Отступ снизу */
+  text-decoration: none;
+  /* Убираем подчеркивание для кнопки */
+  margin-bottom: 40px;
+  /* Отступ снизу */
 }
 
 .btn-blue:hover {
   background-color: #1567be;
-  transform: translateY(-10px); /* Подъем кнопки при наведении */
+  transform: translateY(-10px);
+  /* Подъем кнопки при наведении */
 }
 
-  .link {
-    color: #009fe3; /* Светло-синий для ссылок */
-    text-decoration: underline;
-  }
-  
-  .link:hover {
-    color: #901cef;
-  }
-  
+.link {
+  color: #009fe3;
+  /* Светло-синий для ссылок */
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #901cef;
+}

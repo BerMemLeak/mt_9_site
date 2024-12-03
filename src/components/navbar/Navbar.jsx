@@ -41,7 +41,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
               <img src={isDarkTheme ? logo_dark : logo_light} alt="Логотип" className="logo" />
             </Link>
           </div>
-          
+
           <li className={location.pathname === "/" ? "active" : ""}>
             <Link to="/">Главная</Link>
           </li>
@@ -58,7 +58,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
             <Link to="/about">История</Link>
           </li>
           <li className={location.pathname === "/cases" ? "active" : ""}>
-            <Link to="/cases">Кейсы</Link>
+            <Link to="/cases">Работы</Link>
           </li>
           <li className={location.pathname === "/contacts" ? "active" : ""}>
             <Link to="/contacts">Контакты</Link>
@@ -79,7 +79,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
             <Link to="/documents">Документы</Link>
           </li>
 
-          
+
           <label className="switch">
             <input
               type="checkbox"
@@ -100,7 +100,7 @@ const Navbar = ({ isDarkTheme, toggleTheme }) => {
               </span>
             </span>
           </label>
-          
+
         </ul>
       </nav>
     </div>
