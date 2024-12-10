@@ -14,6 +14,8 @@ export const documentsData = [
         { title: "Титульные листы (Для бакалавров)", link: "/assets/docs/vkr-bak.docx" },
         { title: "Титульные листы (Для магистров)", link: "/assets/docs/vkr-mag.docx" },
         { title: "Образец рецензии на ВКР магистра (бакалавра)", link: "/assets/docs/review.doc" },
+        { title: "Инструкция по оформлению ВКР и проверке на объем заимствования для студентов МГТУ им. Н.Э. Баумана", link: "/assets/docs/review.doc" },
+
       ],
     },
     {
@@ -29,10 +31,28 @@ export const documentsData = [
         { title: "Договор с приложениями для практики", link: "/assets/docs/contract-practice-2024-1.doc" },
         { title: "Памятка по практике", link: "/assets/pdf/practice-memo.pdf" },
         { title: "Пример Индивидуального задания (Для бакалавров)", link: "/assets/images/prakt-ind-mission-bak-2017.png" },
-        { title: "Пример Индивидуального задания (Для магистров)", link: "/assets/images/prakt-ind-mission-mag-2017.png" },
-      ],
-      table: true,
+      ], 
+      table: [
+        {title: "1семестр", group: "мт9-11м", practice_type: "Педагогическая", date: "(07.02.2025 - 10.06.2025)", words:[
+          {name: "Титул", link: "/assets/docs/contract-practice-2024-1.doc" },
+          {name: "Задание", link: "/assets/docs/contract-practice-2024-1.doc" },
+          {name: "Дополнение к заданию", link: "/assets/docs/contract-practice-2024-1.doc" },
+        ]},
+        {title: "2 семестр", group: "МТ9-31Б", practice_type: "Творческая", date: "(01.09.2024 - 30.12.2024)", words:[
+          {name: "Титул", link: "/assets/docs/contract-practice-2024-1.doc" }
+        ]},
+        {title: "3 семестр", group: "МТ9-31Б", practice_type: "Творческая", date: "(07.02.2025 - 10.06.2025)", words:[
+          {name: "Титул", link: "/assets/docs/contract-practice-2024-1.doc" },
+          {name: "Задание", link: "/assets/docs/contract-practice-2024-1.doc" },
+          {name: "Дополнение к заданию", link: "/assets/docs/contract-practice-2024-1.doc" },        ]},
+      ]
     },
+
+
+
+
+
+
     {
       title: "Программы профессиональной переподготовки",
       items: [

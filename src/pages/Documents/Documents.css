@@ -104,3 +104,68 @@
 .dark-theme .documents-table th {
   background-color: #333;
 }
+
+/* Общие стили для таблицы */
+.category-table {
+  margin-top: 20px;
+}
+
+.category-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+/* Стили для ячеек */
+.category-table th,
+.category-table td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+/* Заголовок таблицы */
+.category-table th {
+  font-weight: bold;
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+}
+
+/* Строки таблицы */
+.category-table tr:nth-child(even) {
+  background-color: var(--row-alt-bg-color);
+}
+
+.category-table tr:nth-child(odd) {
+  background-color: var(--row-bg-color);
+}
+
+/* Ссылки */
+.category-table a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.category-table a:hover {
+  text-decoration: underline;
+}
+
+/* Тема: светлая */
+.light-theme {
+  --header-bg-color: #f9f9f9;
+  --header-text-color: #333;
+  --row-bg-color: #ffffff;
+  --row-alt-bg-color: #f4f4f4;
+  --border-color: #ddd;
+  --link-color: #007bff;
+}
+
+/* Тема: темная */
+.dark-theme {
+  --header-bg-color: #333;
+  --header-text-color: #f9f9f9;
+  --row-bg-color: #444;
+  --row-alt-bg-color: #555;
+  --border-color: #666;
+  --link-color: #4dabff;
+}
