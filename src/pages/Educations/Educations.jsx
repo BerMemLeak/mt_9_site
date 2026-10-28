@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Educations.css'; 
-import { educationData } from '../../database/educationData';
+import './Educations.css';
+import {useContent} from '../../content/ContentContext';
 const Educations = ({ theme }) => {
+    const educationData = useContent("education")[0];
     const [activeTab, setActiveTab] = useState({ mainHigher: 'bachelor', secondHigher: 'bachelor' });
     const [selectedEducationType, setSelectedEducationType] = useState('mainHigher');
 
@@ -17,6 +18,7 @@ const Educations = ({ theme }) => {
     setSelectedEducationType(event.target.value);
   };
 
+  if (!educationData) return <p>Информация пока не опубликована.</p>;
   return (
     <div className={`design-container ${theme}`}>
       <div className="education-type-selector">

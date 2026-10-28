@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./NewsCard.css";
+import {RichText} from "../../content/ContentContext";
 import LinkButton from "../linkbutton/LinkButton";
 
-const NewsCard = ({ title, subtitle, description, link, image }) => {
+const NewsCard = ({ title, subtitle, description, link, image, attachments = [] }) => {
   const cardInfoRef = useRef(null);
   const [imageHeight, setImageHeight] = useState(0);
   const [isModalOpen, setModalOpen] = useState(false);
@@ -38,7 +39,8 @@ const NewsCard = ({ title, subtitle, description, link, image }) => {
         <div className="card-info" ref={cardInfoRef}>
           <h1 className="card-title">{title}</h1>
           <h2 className="card-subtitle">{subtitle}</h2>
-          <p>{description}</p>
+          <RichText html={description}/>
+          {attachments.map((file,i)=><p key={i}><a href={file.url}>{file.name || "Скачать файл"}</a></p>)}
           <div className="card-action">{link && <LinkButton link={link} />}</div>
         </div>
         {image && (
@@ -55,6 +57,7 @@ const NewsCard = ({ title, subtitle, description, link, image }) => {
       </div>
       {isModalOpen && (
         <div className="modal" onClick={handleCloseModal}>
+          <button className="modal-close" onClick={()=>setModalOpen(false)} aria-label="Закрыть">×</button>
           <img src={image} alt={title} className="modal-image" />
         </div>
       )}

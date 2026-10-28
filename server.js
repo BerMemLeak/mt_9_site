@@ -4,7 +4,8 @@ const path = require('path')
 const PORT = process.env.PORT || 8080
 
 const app = express()
-app.use(express.static(__dirname))
+// Local preview only. Production uses nginx + the backend containers.
+// Never expose the repository, credentials or server source as static files.
 app.use(express.static(path.resolve(__dirname, 'build')))
 
 app.get('*', (req, res) => {

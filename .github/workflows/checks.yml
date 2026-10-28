@@ -1,0 +1,36 @@
+name: Application checks
+on:
+  push:
+    branches: [master, feat/admin-docker-backups]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: CI=true npm run build
+      - run: pip install -r backend/requirements.txt pytest
+      - run: pytest -q backend
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:ui
+      - run: python scripts/smoke-large-upload.py
+  compose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/start.sh
+      - run: python3 scripts/smoke-compose.py
+      - if: failure()
+        run: docker compose logs --tail=150
+      - if: always()
+        run: docker compose down

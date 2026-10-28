@@ -1,10 +1,11 @@
 import React from "react";
 import NewsCard from "../../components/newscard/NewsCard";
-import anonceData from "../../database/announcementsData";
+import {useContent} from "../../content/ContentContext";
 import './Announcements.css'
 
 // Основной компонент страницы
 const Announcements = () => {
+  const anonceData = useContent("announcements");
   return (
     <div className="announcements-container">
       {anonceData.map((news) => (
@@ -15,6 +16,7 @@ const Announcements = () => {
           description={news.description}
           link={news.link}
           image={news.image}
+          attachments={news.attachments}
         />
       ))}
     </div>

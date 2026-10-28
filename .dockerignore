@@ -1,0 +1,12 @@
+node_modules
+build
+.git
+.env
+.env.*
+!.env.example
+*.key
+*.zip
+__pycache__
+.pytest_cache
+.venv
+data

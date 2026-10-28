@@ -1,14 +1,15 @@
 import React from 'react';
 import './Documents.css'; // Импортируем CSS файл
-import { documentsData } from '../../database/documentsData';
+import {useContent, RichText} from '../../content/ContentContext';
 
 const Documents = ({ theme }) => {
+  const documentsData = useContent("documents");
   return (
     <div className={`documents-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
       {documentsData.map((category, index) => (
         <div key={index} className="category">
           <h2 className="category-title">{category.title}</h2>
-          {category.description && <p className="category-description">{category.description}</p>}
+          {category.description && <RichText className="category-description" html={category.description}/>}
           {category.items.map((doc, docIndex) => (
             <p key={docIndex} className="document-item">
               <a href={doc.link} target="_blank" rel="noopener noreferrer" className="document-link">

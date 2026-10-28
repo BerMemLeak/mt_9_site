@@ -1,23 +1,13 @@
-# Используем Node.js для сборки и запуска
-FROM node:18
-
-# Устанавливаем рабочую директорию
+FROM node:22-bookworm-slim AS build
 WORKDIR /app
-
-# Копируем файлы package.json и package-lock.json
-COPY package*.json ./
-
-# Устанавливаем зависимости
-RUN npm install
-
-# Копируем весь проект в контейнер
-COPY . .
-
-# Сборка React-приложения
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY public ./public
+COPY src ./src
 RUN npm run build
 
-# Устанавливаем порт, на котором будет работать сервер
-ENV PORT=8080
-
-# Запуск приложения
-CMD ["npm", "start"]
+FROM nginx:1.28-alpine
+COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=5s CMD wget -q -O /dev/null http://127.0.0.1/healthz || exit 1

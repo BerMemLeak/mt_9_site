@@ -1,12 +1,70 @@
-version: '3.9'
-
 services:
-  react-app:
+  frontend:
+    build: .
+    ports:
+      - "${SITE_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  backend:
     build:
       context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080" # Пробрасываем порт
+      dockerfile: backend/Dockerfile
     environment:
-      - NODE_ENV=production
-    restart: always
+      DATA_DIR: /data
+      SECRET_KEY: ${SECRET_KEY:?Run ./scripts/start.sh first}
+      INTERNAL_TOKEN: ${INTERNAL_TOKEN:?Run ./scripts/start.sh first}
+      ADMIN_USER: ${ADMIN_USER:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Run ./scripts/start.sh first}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      MAX_UPLOAD_BYTES: "2147483648"
+      MAX_BACKUP_BYTES: ${MAX_BACKUP_BYTES:-107374182400}
+    volumes:
+      - site_data:/data
+    expose:
+      - "8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health', timeout=5)"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: ["python", "scheduler.py"]
+    environment:
+      INTERNAL_TOKEN: ${INTERNAL_TOKEN:?Run ./scripts/start.sh first}
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  site_data:

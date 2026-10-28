@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./ExpandableSection.css";
-import { newsData } from "../../database/news_data";
+import {useContent, RichText} from "../../content/ContentContext";
 
-const ExpandableSection = ({ date, title, content, images }) => {
+const ExpandableSection = ({ date, title, content, images = [], attachments = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -14,14 +14,15 @@ const ExpandableSection = ({ date, title, content, images }) => {
       <div className="header" onClick={toggleOpen}>
         <h2 style={{ color: '#1e90ff' }}>{date}</h2>
         <h2>{title}</h2>
-        <button className="toggle-button">
+        <button className="toggle-button" aria-expanded={isOpen}>
           {isOpen ? "Скрыть" : "Показать больше"}
         </button>
       </div>
       <div className={`content ${isOpen ? "open" : "closed"}`}>
 
         <div className="text-content">
-          <p>{content}</p>
+          <RichText html={content}/>
+          {attachments.map((file,i)=><p key={i}><a href={file.url}>{file.name || "Скачать файл"}</a></p>)}
         </div>
         <div className="image-gallery">
           {images.map((img, index) => (
@@ -34,6 +35,7 @@ const ExpandableSection = ({ date, title, content, images }) => {
 };
 
 const ExpandableSections = () => {
+  const newsData = useContent("news");
   return (
     <div>
       {newsData.map((section, index) => (
@@ -43,6 +45,7 @@ const ExpandableSections = () => {
           title={section.title}
           content={section.content}
           images={section.images}
+          attachments={section.attachments}
         />
       ))}
     </div>

@@ -1,10 +1,11 @@
 import React from "react";
 import NewsCard from "../../components/newscard/NewsCard";
-import anonceData from "../../database/cases";
+import {useContent} from "../../content/ContentContext";
 import './Cases.css'
 
 // Основной компонент страницы
 const Cases = () => {
+  const anonceData = useContent("cases");
   return (
     <div className="cases-container">
       {anonceData.map((news) => (
@@ -15,6 +16,7 @@ const Cases = () => {
           description={news.description}
           link={news.link}
           image={news.image}
+          attachments={news.attachments}
         />
       ))}
     </div>

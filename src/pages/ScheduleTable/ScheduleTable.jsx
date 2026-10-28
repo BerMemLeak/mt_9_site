@@ -1,14 +1,15 @@
 import React from 'react';
 import './ScheduleTable.css'; // Подключаем обновленные стили
-import { schedules } from '../../database/schedules';
+import {useContent} from '../../content/ContentContext';
 const ScheduleTable = ({ theme }) => {
+  const schedules = useContent("schedules");
 
 
   return (
     <div className="schedule-table-wrapper">
       <div className={`schedule-container ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
         <h1 className="schedule-title">Расписание</h1>
-        
+
         <table className="schedule-table">
           <thead>
             <tr>

@@ -2,23 +2,25 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import CustomCursor from './components/cursor/CustomCursor'; // Импортируем кастомный курсор
+import Admin from './admin/Admin';
+import ContentPage from './content/ContentPage';
+import {ContentProvider} from './content/ContentContext';
 
 import Home from './pages/Home/Home';
-import About from './pages/About/About';
+import './pages/About/About.css';
 import Announcements from './pages/Announcements/Announcements';
 import News from './pages/News/News';
 import Team from './pages/Team/Team';
 import Cases from './pages/Cases/Cases';
-import Contacts from './pages/Contacts/Contacts';
+import './pages/Contacts/Contacts.css';
 import NotFound from './pages/NotFound/NotFound'; // Импортируем компонент для страницы 404
 import Educations from './pages/Educations/Educations';
-import StepInFuture from './pages/StepInFuture/StepInFuture';
+import './pages/StepInFuture/StepInFuture.css';
 import Disciplines from './pages/Disciplines/Disciplines';
 import ScheduleTable from './pages/ScheduleTable/ScheduleTable';
 import Documents from './pages/Documents/Documents';
 
-const App = () => {
+const PublicSite = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
     const savedTheme = localStorage.getItem('isDarkTheme');
     return savedTheme === 'true';
@@ -36,22 +38,22 @@ const App = () => {
   return (
     <Router>
       <div>
-        {/* <CustomCursor /> {} */}
         <Navbar isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home theme={isDarkTheme ? 'dark' : 'light'}/>} />
+          <Route path="/pages/:id" element={<ContentPage />} />
           <Route path="/announcements" element={<Announcements />} />
           <Route path="/news" element={<News />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/about" element={<About theme={isDarkTheme ? 'dark' : 'light'} />} />
-          <Route path="/cases" element={<Cases />} />   
-          <Route path="/contacts" element={<Contacts theme={isDarkTheme ? 'dark' : 'light'} />} /> {/* Передаем тему */} 
+          <Route path="/about" element={<ContentPage id="about" theme={isDarkTheme ? 'dark' : 'light'} />} />
+          <Route path="/cases" element={<Cases />} />
+          <Route path="/contacts" element={<ContentPage id="contacts" theme={isDarkTheme ? 'dark' : 'light'} />} /> {/* Передаем тему */}
 
-          <Route path="/educations" element={<Educations theme={isDarkTheme ? 'dark' : 'light'} />} /> 
-          
-          <Route path="/stepInFuture" element={<StepInFuture theme={isDarkTheme ? 'dark' : 'light'} />}  /> {/* Компонент профиля */}
+          <Route path="/educations" element={<Educations theme={isDarkTheme ? 'dark' : 'light'} />} />
+
+          <Route path="/stepInFuture" element={<ContentPage id="stepInFuture" theme={isDarkTheme ? 'dark' : 'light'} />}  /> {/* Компонент профиля */}
           <Route path="/disciplines" element={<Disciplines theme={isDarkTheme ? 'dark' : 'light'}/>} /> {/* Компонент для дисциплин */}
-          <Route path="/schedule" element={<ScheduleTable theme={isDarkTheme ? 'dark' : 'light'} n/>} /> {/* Компонент расписания */}
+          <Route path="/schedule" element={<ScheduleTable theme={isDarkTheme ? 'dark' : 'light'}/>} />
           <Route path="/documents" element={<Documents theme={isDarkTheme ? 'dark' : 'light'} />} /> {/* Компонент документов */}
 
           <Route path="*" element={<NotFound theme={isDarkTheme ? 'dark' : 'light'} />} />
@@ -61,4 +63,6 @@ const App = () => {
   );
 };
 
-export default App;
+export default function App() {
+  return window.location.pathname.startsWith("/admin") ? <Admin/> : <ContentProvider><PublicSite/></ContentProvider>;
+}

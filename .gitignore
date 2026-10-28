@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Runtime data and secrets
+.env
+.env.tmp
+data/
+*.zip
+__pycache__/
+.pytest_cache/
+.venv/

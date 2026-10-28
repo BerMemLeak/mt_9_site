@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import disciplinesData from '../../database/disciplinesData';
+import {useContent} from '../../content/ContentContext';
 import './Disciplines.css';
 
 const Disciplines = ({ theme }) => {
+  const disciplinesData = useContent("disciplines");
   const [selectedDiscipline, setSelectedDiscipline] = useState(null);
 
   const handleDisciplineClick = (discipline) => {
@@ -20,7 +21,7 @@ const Disciplines = ({ theme }) => {
   return (
     <div className={`disciplines-container ${theme === 'dark' ? 'dark' : 'light'}`}>
       <h1 className="title">Дисциплины</h1>
-      
+
       <h2 className="level-title">Бакалавриат</h2>
       <ul className="disciplines-list">
         {bachelorDisciplines.map((discipline, index) => (
@@ -48,7 +49,7 @@ const Disciplines = ({ theme }) => {
           </li>
         ))}
       </ul>
-      
+
       <h2 className="level-title">Магистратура</h2>
       <ul className="disciplines-list">
         {masterDisciplines.map((discipline, index) => (

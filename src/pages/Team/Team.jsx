@@ -1,8 +1,9 @@
 import React from 'react';
 import TeacherCard from '../../components/teachercard/TeacherCard';
-import { teachers } from "../../database/teachersData"; // Импортируем преподавателей
+import {useContent} from "../../content/ContentContext"; // Импортируем преподавателей
 import './Team.css'
 const Team = () => {
+  const teachers = useContent("teachers");
   return (
     <div className="team-container">
       {teachers.map((teacher, index) => (
